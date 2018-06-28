@@ -1,0 +1,2 @@
+# ImageMagickCheatSheet
+ImageMagick Cheat Sheet
