@@ -41,31 +41,23 @@ TL;NR
  brew install imagemagick
  ```
 
-
-
 ### Linux
-
-
-
-#### CPU Constraints
-
-You can limit CPU, either using a percentage of all CPUs, or by using specific cores.  
+ 
 
 #### Memory Constraints
 
-You can also set [memory constraints]
-
+https://github.com/google/sanitizers/wiki/AddressSanitizer
 
 #### Capabilities
 
 IM capabilities:
 
-Animation,Color management
+Animation,Color management,
 
 
 ### Info
 
-* [`convert info`](https://docs.docker.com/engine/reference/commandline/ps) shows running containers.
+* [`convert info`](https://docs.docker.com/engine/reference/commandline/ps) shows convert info.
 
 
 
