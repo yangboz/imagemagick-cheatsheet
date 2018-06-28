@@ -159,5 +159,7 @@ Click [README.md](https://github.com/wsargent/docker-cheat-sheet/blob/master/REA
 
 ## References
 
+http://www.imagemagick.org/script/index.php
+
 http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php
 
