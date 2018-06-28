@@ -13,11 +13,9 @@
 
 ## Why ImageMagick
 
-"With Docker, developers can build any app in any language using any toolchain. “Dockerized” apps are completely portable and can run anywhere - colleagues’ OS X and Windows laptops, QA servers running Ubuntu in the cloud, and production data center VMs running Red Hat.
+Use ImageMagick® to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 200) including PNG, JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
 
-Developers can get going quickly by starting with one of the 13,000+ apps available on Docker Hub. Docker manages and tracks changes and dependencies, making it easier for sysadmins to understand how the apps that developers build work. And with Docker Hub, developers can automate their build pipeline and share artifacts with collaborators through public or private repositories.
-
-Docker helps developers build and ship higher-quality applications, faster." -- [What is Docker](https://www.docker.com/what-docker#copy1)
+The functionality of ImageMagick is typically utilized from the command-line or you can use the features from programs written in your favorite language. Choose from these interfaces: G2F (Ada), MagickCore (C), MagickWand (C), ChMagick (Ch), ImageMagickObject (COM+), Magick++ (C++), JMagick (Java), JuliaIO (Julia), L-Magick (Lisp), Lua (LuaJIT), NMagick (Neko/haXe), Magick.NET (.NET), PascalMagick (Pascal), PerlMagick (Perl), MagickWand for PHP (PHP), IMagick (PHP), PythonMagick (Python), magick (R), RMagick (Ruby), or TclMagick (Tcl/TK). With a language interface, use ImageMagick to modify or create images dynamically and automagically.
 
 TL;NR
 
@@ -60,7 +58,9 @@ You can also set [memory constraints]
 
 #### Capabilities
 
-IM capabilities
+IM capabilities:
+
+Animation,Color management
 
 
 ### Info
@@ -134,21 +134,6 @@ mogrify -resize 750x750\! *.jpg
 ```
 mogrify -define jpeg:extent=5100kb *.png
 ```
-
-
-## Checking Docker Version 
-
-It is very important that you always know the current version of Docker you are currently running on at any point in time.This is very helpful because you get to know what features are compatible with what you have running. This is also important because you know what containers to run from the docker store when you are trying to get template containers. That said let see how to know what version of docker we have running currently
-
-* ['docker version'](https://docs.docker.com/engine/reference/commandline/version/)   check what version of docker you have running 
-* [docker version [OPTIONS]]
-
-Get the server version
-$ docker version --format '{{.Server.Version}}'
-
-1.8.0
-Dump raw JSON data
-$ docker version --format '{{json .}}'
 
 
 ## Contributing
