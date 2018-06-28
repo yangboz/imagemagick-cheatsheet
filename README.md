@@ -1,6 +1,4 @@
-# ImageMagickCheatSheet
-
-# Docker Cheat Sheet
+# ImageMagick Cheat Sheet
 
 **Want to improve this cheat sheet?  See the [Contributing](#contributing) section!**
 
@@ -31,13 +29,23 @@ Developers can get going quickly by starting with one of the 13,000+ apps availa
 
 Docker helps developers build and ship higher-quality applications, faster." -- [What is Docker](https://www.docker.com/what-docker#copy1)
 
+TL;NR
+
 ## Prerequisites
 
-I use [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) with the [Docker plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#docker) for autocompletion of docker commands. YMMV.
+### ColorSpace
+
+### Image Processing
+
+### Image format
+
+TL;NR
+
+## Installation
 
 ### Linux
 
-The 3.10.x kernel is [the minimum requirement](https://docs.docker.com/engine/installation/binaries/#check-kernel-dependencies) for Docker.
+???
 
 ### MacOS
 
@@ -45,7 +53,7 @@ The 3.10.x kernel is [the minimum requirement](https://docs.docker.com/engine/in
  brew install imagemagick
  ```
 
-## Installation
+
 
 ### Linux
 
@@ -60,10 +68,9 @@ You can limit CPU, either using a percentage of all CPUs, or by using specific c
 You can also set [memory constraints]
 
 
-
 #### Capabilities
 
-Linux capabilities can be set by using `cap-add` and `cap-drop`.
+IM capabilities
 
 
 ### Info
@@ -72,15 +79,71 @@ Linux capabilities can be set by using `cap-add` and `cap-drop`.
 
 
 
-### Executing Commands
+### Scripts
 
-* [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec) to execute a command in container.
 
-To enter a running container, attach a new shell process to a running container called foo, use: `docker exec -it foo /bin/bash`.
+#### TIFF to PNG:
 
-## Images
+```
+mogrify -background black -format png -depth 8  Data/Training/Images/cancer_subset00/*.tiff
+```
 
-Images are just [templates for docker containers](https://docs.docker.com/engine/understanding-docker/#how-does-a-docker-image-work).
+####  SVG to PNG:
+
+```
+mogrify -background black -format png -depth 8 Data/Training/Labels/cancer_subset00/*.svg
+```
+
+#### Resize:
+
+```
+mogrify -resize 50% Data/Training/Images/cancer_subset00/*.png
+```
+
+#### GrayScale
+
+```
+for file in Data/Training/Images/cancer_subset00/*.png; do convert $file  -colorspace Gray $file;done
+```
+
+#### SVG fill replace:
+
+```
+find ./ -type f -name '*.svg' | xargs -I{} sed -i_old -n -e 's/polygon fill="none"/polygon fill="white"/g;p;' {}
+```
+
+#### Gray to RGB
+
+```
+mogrify -type TrueColorMatte -define png:color-type=6  /Volumes/UUI/labels/normal/*.png
+
+```
+#### Rotate 90
+
+```
+mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
+```
+#### Rename with prefix
+
+```
+for filename in *.png; do mv "$filename" "prefix_$filename"; done;
+```
+#### Flip
+
+#### Flop
+
+#### Resize
+
+batch:
+
+```
+mogrify -resize 750x750\! *.jpg 
+```
+#### File Resize
+
+```
+mogrify -define jpeg:extent=5100kb *.png
+```
 
 
 ## Checking Docker Version 
