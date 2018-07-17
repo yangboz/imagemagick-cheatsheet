@@ -33,7 +33,13 @@ TL;NR
 
 ### Linux
 
-???
+```
+apt-get install ImageMagick
+```
+
+```
+yum install ImageMagick
+```
 
 ### MacOS
 
@@ -57,8 +63,7 @@ Animation,Color management,
 
 ### Info
 
-* [`convert info`](https://docs.docker.com/engine/reference/commandline/ps) shows convert info.
-
+* [`convert info`](http://www.imagemagick.org/script/index.php) shows convert info.
 
 
 ### Scripts
@@ -127,6 +132,11 @@ mogrify -resize 750x750\! *.jpg
 mogrify -define jpeg:extent=5100kb *.png
 ```
 
+#### Background Transparent
+
+```
+convert input-with-solid-white-background-color.jpg -transparent white output-transparent.jpg
+```
 
 ## Contributing
 
