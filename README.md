@@ -158,6 +158,19 @@ Click [README.md](https://github.com/wsargent/docker-cheat-sheet/blob/master/REA
 
 ![Commit](images/commit.png)
 
+### FFMPEG
+
+fasten video and video
+
+2X
+```
+ffmpeg -i input.mp4   -filter:v "setpts=0.5*PTS" -filter:a "atempo=2" outputX2.mp4 
+```
+
+4X
+```
+ffmpeg -i input.mp4   -filter:v "setpts=0.25*PTS" -filter:a "atempo=2, atempo=2" outputX4.mp4 
+```
 
 ## References
 
