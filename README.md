@@ -4,139 +4,135 @@
 
 ## Table of Contents
 
-* [Why ImageMagick](#why-ImageMagick)
+* [Why ImageMagick](#why-FFMPEG)
 * [Prerequisites](#prerequisites)
 * [Installation](#installation)
-* [Best Practices](#best-practices)
-* [Tips](#tips)
+* [Best Practices](#cheatsheet)
+* [Tools](#tools)
 * [Contributing](#contributing)
 
-## Why ImageMagick
+## Why FFMPEG
 
-Use ImageMagick® to create, edit, compose, or convert bitmap images. It can read and write images in a variety of formats (over 200) including PNG, JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors, apply various special effects, or draw text, lines, polygons, ellipses and Bézier curves.
+FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations.
 
-The functionality of ImageMagick is typically utilized from the command-line or you can use the features from programs written in your favorite language. Choose from these interfaces: G2F (Ada), MagickCore (C), MagickWand (C), ChMagick (Ch), ImageMagickObject (COM+), Magick++ (C++), JMagick (Java), JuliaIO (Julia), L-Magick (Lisp), Lua (LuaJIT), NMagick (Neko/haXe), Magick.NET (.NET), PascalMagick (Pascal), PerlMagick (Perl), MagickWand for PHP (PHP), IMagick (PHP), PythonMagick (Python), magick (R), RMagick (Ruby), or TclMagick (Tcl/TK). With a language interface, use ImageMagick to modify or create images dynamically and automagically.
+A complete, cross-platform solution to record, convert and stream audio and video.
+Converting video and audio has never been so easy.
 
 TL;NR
 
 ## Prerequisites
 
-### ColorSpace
+https://ffmpeg.org/documentation.html
 
-### Image Processing
+### Video format
 
-### Image format
+mp4,avi,mpeg,rtmp
+
+### Video Processing
+
+### Video codec
 
 TL;NR
 
 ## Installation
 
+http://ffmpeg.org/download.html
+
 ### Linux
 
 ```
-apt-get install ImageMagick
+apt-get install ffmpeg
 ```
 
 ```
-yum install ImageMagick
+yum install ffmpeg
 ```
 
 ### MacOS
 
  ```
- brew install imagemagick
+ brew install ffmpeg
  ```
 
-### Linux
- 
+### Windows
+
+https://ffmpeg.org/download.html#build-windows
 
 #### Memory Constraints
 
-https://github.com/google/sanitizers/wiki/AddressSanitizer
 
-#### Capabilities
+#### Overview
 
-IM capabilities:
+ _______              ______________
+|       |            |              |
+| input |  demuxer   | encoded data |   decoder
+| file  | ---------> | packets      | -----+
+|_______|            |______________|      |
+                                           v
+                                       _________
+                                      |         |
+                                      | decoded |
+                                      | frames  |
+                                      |_________|
+ ________             ______________       |
+|        |           |              |      |
+| output | <-------- | encoded data | <----+
+| file   |   muxer   | packets      |   encoder
+|________|           |______________|
 
-Animation,Color management,
 
+### Cheatsheet
+
+ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...
 
 ### Info
 
-* [`convert info`](http://www.imagemagick.org/script/index.php) shows convert info.
+```ffmpeg info```
 
-
-### Scripts
-
-
-#### TIFF to PNG:
+####  mp4 to avi:
 
 ```
-mogrify -background black -format png -depth 8  Data/Training/Images/cancer_subset00/*.tiff
-```
-
-####  SVG to PNG:
-
-```
-mogrify -background black -format png -depth 8 Data/Training/Labels/cancer_subset00/*.svg
+ffmpeg -i input.mp4 output.avi
 ```
 
 #### Resize:
 
 ```
-mogrify -resize 50% Data/Training/Images/cancer_subset00/*.png
+```
+
+#### Extract to images
+
+```
+ffmpeg -i video.mpg image-%04d.jpg 
 ```
 
 #### GrayScale
 
-```
-for file in Data/Training/Images/cancer_subset00/*.png; do convert $file  -colorspace Gray $file;done
-```
-
-#### SVG fill replace:
-
-```
-find ./ -type f -name '*.svg' | xargs -I{} sed -i_old -n -e 's/polygon fill="none"/polygon fill="white"/g;p;' {}
-```
 
 #### Gray to RGB
 
-```
-mogrify -type TrueColorMatte -define png:color-type=6  /Volumes/UUI/labels/normal/*.png
-
-```
 #### Rotate 90
 
-```
-mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
-```
-#### Rename with prefix
-
-```
-for filename in *.png; do mv "$filename" "prefix_$filename"; done;
-```
 #### Flip
 
 #### Flop
 
 #### Resize
 
-batch:
+#### fasten video and audio
 
+2X
 ```
-mogrify -resize 750x750\! *.jpg 
+ffmpeg -i input.mp4   -filter:v "setpts=0.5*PTS" -filter:a "atempo=2" outputX2.mp4 
 ```
-#### File Resize
 
+4X
 ```
-mogrify -define jpeg:extent=5100kb *.png
+ffmpeg -i input.mp4   -filter:v "setpts=0.25*PTS" -filter:a "atempo=2, atempo=2" outputX4.mp4 
 ```
 
 #### Background Transparent
 
-```
-convert input-with-solid-white-background-color.jpg -transparent white output-transparent.jpg
-```
 
 ## Contributing
 
@@ -172,9 +168,9 @@ ffmpeg -i input.mp4   -filter:v "setpts=0.5*PTS" -filter:a "atempo=2" outputX2.m
 ffmpeg -i input.mp4   -filter:v "setpts=0.25*PTS" -filter:a "atempo=2, atempo=2" outputX4.mp4 
 ```
 
+### Tools
+
 ## References
 
-http://www.imagemagick.org/script/index.php
-
-http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php
+https://ffmpeg.org/ffmpeg.html
 
