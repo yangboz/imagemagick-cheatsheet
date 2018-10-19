@@ -164,3 +164,5 @@ Click [README.md](https://github.com/wsargent/docker-cheat-sheet/blob/master/REA
 http://www.imagemagick.org/script/index.php
 
 http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php
+
+http://www.fmwconcepts.com/imagemagick/rotate3D/index.php
