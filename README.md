@@ -115,6 +115,13 @@ mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
 ```
 for filename in *.png; do mv "$filename" "prefix_$filename"; done;
 ```
+
+#### Get image size
+
+```
+identify -format '%w%h' input.jpeg
+```
+
 #### Flip
 
 #### Flop
