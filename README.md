@@ -116,10 +116,10 @@ mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
 for filename in *.png; do mv "$filename" "prefix_$filename"; done;
 ```
 
-#### Get image size, channel, alpha, depth
+#### Get image size, channel, alpha, depth, DPI
 
 ```
-identify -format '%w X %h %[channels] %[bit-depth]\n' input.jpeg
+identify -format '%w X %h %[channels] %[bit-depth] %x x %y\n' input.jpeg
 ```
 
 #### Flip
