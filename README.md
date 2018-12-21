@@ -151,20 +151,11 @@ Here's how to contribute to this cheat sheet.
 
 ### Open README.md
 
-Click [README.md](https://github.com/wsargent/docker-cheat-sheet/blob/master/README.md) <-- this link
-
-![Click This](images/click.png)
-
 ### Edit Page
-
-![Edit This](images/edit.png)
 
 ### Make Changes and Commit
 
-![Change This](images/change.png)
-
-![Commit](images/commit.png)
-
+I will be greatly appreciated.
 
 ## References
 
