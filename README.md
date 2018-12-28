@@ -87,6 +87,24 @@ mogrify -background black -format png -depth 8 Data/Training/Labels/cancer_subse
 mogrify -resize 50% Data/Training/Images/cancer_subset00/*.png
 ```
 
+``
+mogrify -resize 100% --transparent -strip -quality 90  Data/Training/Images/cancer_subset00/*.png
+``
+
+#### jpeg reduce filesize
+
+``
+convert -resize 100%  -strip -quality 90  input.jpg out.jpg
+``
+
+#### png transpacent
+
+ ``
+convert -resize 100% -transparent  -strip -quality 90  input.png out.png
+``
+
+@see: http://www.imagemagick.org/script/command-line-options.php#quality
+
 #### GrayScale
 
 ```
