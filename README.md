@@ -163,6 +163,17 @@ mogrify -define jpeg:extent=5100kb *.png
 convert input-with-solid-white-background-color.jpg -transparent white output-transparent.jpg
 ```
 
+#### append photos horizontally
+
+```
+convert *.jpg -append full_horizontally.jpg
+```
+#### append photos vertically
+
+```
+convert *.jpg +append full_vertically.jpg
+```
+
 ## Contributing
 
 Here's how to contribute to this cheat sheet.
