@@ -128,6 +128,11 @@ mogrify -type TrueColorMatte -define png:color-type=6  /Volumes/UUI/labels/norma
 ```
 mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
 ```
+
+```
+ mogrify -rotate 90 *.jpg
+```
+
 #### Rename with prefix
 
 ```
