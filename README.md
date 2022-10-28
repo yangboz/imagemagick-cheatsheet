@@ -81,6 +81,15 @@ mogrify -background black -format png -depth 8  Data/Training/Images/cancer_subs
 mogrify -background black -format png -depth 8 Data/Training/Labels/cancer_subset00/*.svg
 ```
 
+####  webp to jpg:
+
+```
+convert input.webp output.jpg
+```
+
+```
+mogrify -format JPG *.webp
+```
 #### Resize:
 
 ```
