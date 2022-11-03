@@ -188,6 +188,17 @@ convert *.jpg -append full_horizontally.jpg
 convert *.jpg +append full_vertically.jpg
 ```
 
+#### merge images
+
+
+```
+
+  montage balloon.gif medical.gif present.gif logo: \
+          -geometry 48x48+2+2   montage_geom_size.jpg
+```
+
+@more : https://legacy.imagemagick.org/Usage/montage/
+
 ## Contributing
 
 Here's how to contribute to this cheat sheet.
