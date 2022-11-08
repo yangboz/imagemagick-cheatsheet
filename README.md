@@ -84,7 +84,7 @@ mogrify -background black -format png -depth 8 Data/Training/Labels/cancer_subse
 ####  JPG to jpg:
 
 ```
-mogrify -format JPG *.jpg
+mogrify -format jpg *.JPG
 ```
 
 ####  webp to jpg:
