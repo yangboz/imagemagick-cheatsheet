@@ -203,6 +203,14 @@ convert *.jpg +append full_vertically.jpg
           -geometry 48x48+2+2   montage_geom_size.jpg
 ```
 
+#### colorspace
+
+ sRGB to RGB
+```
+magick input.tif -colorspace RGB output.tif
+```
+
+
 @more : https://legacy.imagemagick.org/Usage/montage/
 
 ## Contributing
@@ -224,3 +232,5 @@ http://www.imagemagick.org/script/index.php
 http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php
 
 http://www.fmwconcepts.com/imagemagick/rotate3D/index.php
+
+speed up  mogify: http://www.graphicsmagick.org/formats.html
