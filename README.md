@@ -233,4 +233,6 @@ http://www.fmwconcepts.com/imagemagick/fisheye2rect/index.php
 
 http://www.fmwconcepts.com/imagemagick/rotate3D/index.php
 
-speed up  mogify: http://www.graphicsmagick.org/formats.html
+speed up mogify: http://www.graphicsmagick.org/formats.html
+
+https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=21281
