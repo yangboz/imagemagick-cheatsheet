@@ -210,6 +210,11 @@ convert *.jpg +append full_vertically.jpg
 magick input.tif -colorspace RGB output.tif
 ```
 
+### rename filenames
+
+```
+for f in *.jpg; do mv "$f" "$(echo "$f" | sed s/IMG/VACATION/)"; done
+```
 
 @more : https://legacy.imagemagick.org/Usage/montage/
 
