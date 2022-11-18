@@ -154,6 +154,17 @@ mogrify -rotate 90 /Volumes/UUI/images/rotate90/*.png
 for filename in *.png; do mv "$filename" "prefix_$filename"; done;
 ```
 
+#### split big image to small pieces
+
+```
+convert -crop 50%x100% input.png output.png
+```
+
+```
+convert rose: -crop 23x15  +repage  +adjoin  rose_23x15_%02d.gif
+```
+
+
 #### Get image size, channel, alpha, depth, DPI
 
 ```
@@ -241,3 +252,5 @@ http://www.fmwconcepts.com/imagemagick/rotate3D/index.php
 speed up mogify: http://www.graphicsmagick.org/formats.html
 
 https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=21281
+
+https://legacy.imagemagick.org/Usage/crop/#crop_tile
