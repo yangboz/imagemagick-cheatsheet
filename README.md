@@ -159,6 +159,11 @@ for filename in *.png; do mv "$filename" "prefix_$filename"; done;
 ```
 convert -crop 50%x100% input.png output.png
 ```
+under file folder each one 5times with splited
+
+```
+for FILE in *;do convert -crop 50x50% $FILE $FILE;done
+```
 
 ```
 convert rose: -crop 23x15  +repage  +adjoin  rose_23x15_%02d.gif
