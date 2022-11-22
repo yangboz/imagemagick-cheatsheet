@@ -234,6 +234,13 @@ for f in *.jpg; do mv "$f" "$(echo "$f" | sed s/IMG/VACATION/)"; done
 
 @more : https://legacy.imagemagick.org/Usage/montage/
 
+### DCM to jpg
+
+```
+convert/mgick *.DCM  out.jpg
+```
+issue https://github.com/ImageMagick/ImageMagick/issues/1692
+
 ## Contributing
 
 Here's how to contribute to this cheat sheet.
