@@ -241,6 +241,12 @@ convert/mgick *.DCM  out.jpg
 ```
 issue https://github.com/ImageMagick/ImageMagick/issues/1692
 
+## crop split
+
+```
+convert -crop 512x512 +repage huge.tif x/image_out_%d.tif
+```
+
 ## Contributing
 
 Here's how to contribute to this cheat sheet.
