@@ -272,3 +272,8 @@ speed up mogify: http://www.graphicsmagick.org/formats.html
 https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=21281
 
 https://legacy.imagemagick.org/Usage/crop/#crop_tile
+
+## troubleshooting
+
+https://stackoverflow.com/questions/24712158/how-to-solve-imagemagicks-fontconfig-warning-ignoring-utf-8-not-a-valid-regi
+
