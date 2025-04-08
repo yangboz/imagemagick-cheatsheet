@@ -133,7 +133,7 @@ convert *.jpg document.pdf
 ```bash
 convert -density 300 document.pdf page%03d.jpg
 ```
-####note: PDF to Images (One Per Page) The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"
+#### note: PDF to Images (One Per Page) The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"
 
 ### High-Quality JPEG Conversion
 
